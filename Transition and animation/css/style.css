@@ -1,0 +1,269 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background:  #1a1a1a;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li{
+    padding-inline: 20px;
+}
+
+/*Header Section*/
+header{
+    color: skyblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: black;
+    border-bottom: 3px skyblue solid;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+header h2{
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.08em;
+}
+
+header ul li{
+    padding-top: 5px;
+}
+
+header a{
+    transition: color 250ms ease;
+    font-size: 0.9rem;
+}
+
+header a:hover{
+    color: skyblue;
+}
+
+/*hero section*/
+
+.hero__container{
+    padding-top:10rem;
+    padding-bottom: 6rem;
+    border-bottom: 1px solid #333;
+    background: #222;
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero__container h1{
+    color: white;
+    text-transform: uppercase;
+    font-size: 2.8rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0;
+}
+
+.hero__container span{
+    color: skyblue;
+}
+
+.hero__container p{
+    margin-bottom: 40px;
+}
+
+.hero__button{
+    background: skyblue;
+    color: black;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.09em;
+    font-weight: bold;
+    transition: background 250ms ease, color 200ms ease;
+}
+
+.hero__button:hover{
+    background: rgb(62, 100, 172);
+    color: white;
+}
+
+/*projects Section*/
+.project__container{
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 60px;
+}
+
+.project__box{
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.box{
+    background: #222;
+    border:1px solid #333;
+    border-top: 2px solid #333;
+    padding-inline: 10px;
+    flex-wrap: wrap;
+    min-width:160px;
+    flex: 1;
+    color: #aaa;
+    position: relative;
+    padding-bottom: 20px;
+    transition: border-top 250ms ease, transform 200ms ease;
+}
+
+.box:hover{
+    border-top: 2px solid skyblue;
+    transform: translateY(-10px);
+}
+
+.box h2{
+    color: white;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.box a{
+    color: skyblue;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.8rem; 
+    transition: color 300ms ease, letter-spacing 300ms ease;
+}
+
+.box a:hover{
+    color: white;
+    letter-spacing: 0.2em;
+}
+
+.project__container .project__title{
+    color: skyblue;
+    border-left: 3px solid skyblue;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+@keyframes pulse{
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+.badge{
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background: skyblue;
+    color: black;
+    border-radius: 10px;
+    padding: 0 8px;
+    animation: pulse 2000ms infinite;
+}
+
+/*Skill Section*/
+.skill__container{
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    padding: 0 0 60px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 60px;
+}
+
+.skill__title{
+    color: skyblue;
+    font-size: 1rem;
+    border-left: 3px solid skyblue;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    margin-bottom: 25px;
+}
+
+.skill__wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skill__row{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 250ms ease;
+}
+
+.skill__row:hover{
+    transform: translateX(8px);
+}
+
+.skill__name{
+   width: 100px;
+}
+
+.skill__percent{
+    color: #aaa;
+}
+
+.skill__bar{
+    flex: 1;
+    height: 8px;
+    background: #2a2a2a;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+@keyframes fillbar{
+    from {width: 0%;}
+    to {width : var(--width);}
+}
+
+.skill__fill{
+   height: 100%;
+   background: skyblue;
+   border-radius: 4px;
+   width: 0%;
+   animation: fillbar 1.2s ease forwards;
+}
+/*this part can also be done without 
+the animation/keyframe just go to html and make --width to width*/
+
+/*
+.skill__row:nth-child(1) .skill__fill { animation-delay: 0.1s;}
+.skill__row:nth-child(2) .skill__fill { animation-delay: 0.3s;}
+.skill__row:nth-child(3) .skill__fill { animation-delay: 0.5s;}
+
+well this animation delay is actually useless since the animation happens even before the element is on viewport
+.Javascript is needed for this to be useful
+*/
